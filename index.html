@@ -6,26 +6,36 @@
   <link rel="icon" type="image/svg+xml" href="/vite.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Calculadora + TS</title>
+
+  <link rel="stylesheet" href="./src/css/style.css">
 </head>
 
 <body>
-  <div id="app">
-    <div>
-      <h2>Calculadora</h2>
-      <section id="table_numeric">
+  <div class="app">
+    <h2 class="title">Calculadora</h2>
+
+    <!-- Display -->
+    <section class="display">
+      <h2 id="table_display">
+        0
+      </h2>
+    </section>
+
+    <!-- Botones -->
+    <div class="calculator">
+      <section id="table_numeric" class="generalGrid">
 
       </section>
-      <section id="table_opBasic">
-
-      </section>
-      <section id="table_display">
+      <section id="table_opBasic" class="generalGrid">
 
       </section>
 
-      <form id="formulario">
-        <input type="submit" value="Enviar">
-      </form>
     </div>
+    <form id="formulario">
+      <button class="btn_submit" type="submit">
+        =
+      </button>
+    </form>
   </div>
   <script type="module" src="/src/main.ts"></script>
 </body>

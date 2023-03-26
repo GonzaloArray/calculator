@@ -18,16 +18,13 @@ export const renderSimbolBasic = (btnOperation: Props): void => {
   TABLE_OPBASIC.textContent = ''
 
   Object.entries(btnOperation).forEach(btn => {
-    const DIV_CONTAINER = <HTMLElement>document.createElement('div')
-
     const button = document.createElement('button');
     button.disabled = configValue.stop
-    button.textContent = btn[0];
+    button.textContent = btn[1].simbol;
 
     button.addEventListener('click', () => handleClick(btn[1].simbol));
 
-    DIV_CONTAINER.appendChild(button);
 
-    TABLE_OPBASIC.appendChild(DIV_CONTAINER)
+    TABLE_OPBASIC.appendChild(button)
   })
 }
