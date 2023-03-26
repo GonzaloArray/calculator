@@ -1,8 +1,11 @@
+interface Operation {
+  operation: string,
+  started: boolean,
+  stop: boolean
+}
 
-
-export const configValue = {
-  value1: 0,
-  value2: 0,
-  simbol: '',
-  started: false
+export const configValue: Operation = {
+  operation: '',
+  started: false,
+  stop: false
 }
