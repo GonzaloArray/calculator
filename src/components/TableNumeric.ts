@@ -22,16 +22,12 @@ export const renderBtnNumeric = (btns: Props[]): void => {
   btns.forEach(btn => {
     const { num } = btn
 
-    const DIV_CONTAINER = <HTMLElement>document.createElement('div')
-
     const button = document.createElement('button');
     button.textContent = `${num}`;
 
     button.addEventListener('click', () => handleClick(num));
-
-    DIV_CONTAINER.appendChild(button);
-
-    TABLE_NUMERIC.appendChild(DIV_CONTAINER)
+    
+    TABLE_NUMERIC.appendChild(button)
   })
 }
 
