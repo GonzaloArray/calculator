@@ -1,17 +1,20 @@
-import { Props } from "../data/BTN_CALCULATOR"
+import { OPERATION_BUTTONS, Props } from "../data/BTN_CALCULATOR"
 import { configValue } from "../data/CombinationNumber";
+import { renderSimbolBasic } from "./TableSimbol";
 
 const TABLE_NUMERIC = document.querySelector('#table_numeric') as HTMLElement;
 
 
 const handleClick = (number: number): object => {
   if (!configValue.started) {
-    configValue.value1 = number
+    configValue.operation += number
     configValue.started = true
   } else {
-    configValue.value2 = number
+    configValue.operation += number
+    configValue.stop = false
   }
-  console.log(configValue)
+
+  renderSimbolBasic(OPERATION_BUTTONS)
   return configValue
 }
 
