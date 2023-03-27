@@ -1,3 +1,5 @@
+
+
 export const operationMultiple = (numeros: number[], operadores: string[]): number => {
 
   const NotIsExist = operadores.find(operadore => operadore === '/' || operadore === '*');
