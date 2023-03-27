@@ -1,5 +1,6 @@
 import { OPERATION_BUTTONS, Props } from "../data/BTN_CALCULATOR"
 import { configValue } from "../data/CombinationNumber";
+import { renderTableResult } from "./TableResult";
 import { renderSimbolBasic } from "./TableSimbol";
 
 const TABLE_NUMERIC = document.querySelector('#table_numeric') as HTMLElement;
@@ -17,6 +18,7 @@ const handleClick = (number: number): object => {
   }
 
   renderSimbolBasic(OPERATION_BUTTONS)
+  renderTableResult()
   return configValue
 }
 
