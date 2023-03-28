@@ -1,26 +1,15 @@
 import { configValue } from "../data/CombinationNumber";
 import { CleanConfig } from "../data/panel_control/DATA";
+import { indexLastStatus } from "./helpers/indexLastStatus";
 import { renderTableResult } from "./TableResult";
 
 const CONTROL_PANEL = document.querySelector('#control_panel');
 const DISPLAY = <HTMLElement>document.querySelector('#table_display')
 
-
-const indexLastStatus = () => {
-  const patron: RegExp = /[-+*/](?!.*[-+*/])/;
-  const operation: string = configValue.operation;
-  const lastOperatorIndex: number = operation.search(patron);
-  
-  
-  return lastOperatorIndex
-}
-
-
 const handleClean = (status: string) => {
-  if (status === 'partial') {
-    const lastIndex = configValue.operation.length - 1
-
+  const lastIndex = configValue.operation.length - 1
   
+  if (status === 'partial') {
     const indexStart = indexLastStatus()
     const data = configValue.operation[lastIndex]
 
@@ -28,7 +17,6 @@ const handleClean = (status: string) => {
       const statusChange = configValue.operation.slice(0, indexStart + 1)
       
       configValue.operation = statusChange
-      renderTableResult()
     }
   } 
   
@@ -36,8 +24,14 @@ const handleClean = (status: string) => {
     configValue.operation = ''    
     configValue.started = false
     DISPLAY.textContent = '0'  
-    renderTableResult()
   }
+
+  if (status === 'remove') {
+    const data =  configValue.operation.slice(0, lastIndex)
+    configValue.operation = data
+  }
+
+  renderTableResult()
 
 }
 

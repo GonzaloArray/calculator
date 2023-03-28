@@ -20,6 +20,7 @@ export const renderSimbolBasic = (btnOperation: Props): void => {
   Object.entries(btnOperation).forEach(btn => {
     const button = document.createElement('button');
     button.disabled = configValue.stop
+    button.classList.add('op-aritmetic')
     button.textContent = btn[1].simbol;
 
     button.addEventListener('click', () => handleClick(btn[1].simbol));

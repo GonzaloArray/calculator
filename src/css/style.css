@@ -92,3 +92,26 @@ button:active{
   background-color: red;
   padding: .5rem;
 }
+
+/* Op Math */
+.op-aritmetic{
+  background-color: rgb(56, 52, 52);
+  padding: 1rem .5rem;
+}
+#table_opMath{
+  grid-template-columns: repeat(1, 70px);
+  height: 20px;
+}
+/* TODO: realizar cambios y borrar esta tarea */
+/* TODO: una vez realizado la logica*/
+#table_opMath button:nth-child(2),
+#table_opMath button:nth-child(3)
+{
+  display: none;
+}
+
+/* Template Config */
+#template_config{
+  display: none;
+}
+
