@@ -14,5 +14,10 @@ export const DATA_PANEL_CONTROL: CleanConfig[] = [
     id: 'asdfasdf1123edascgrñwe',
     option: 'clean',
     value: 'C'
+  },
+  {
+    id: 'asdfasdf1123edascgrñwe',
+    option: 'remove',
+    value: '<x'
   }
 ]
