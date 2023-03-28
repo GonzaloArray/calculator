@@ -1,0 +1,117 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #757575;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* Generales */
+p{
+  color: white;
+}
+button {
+  background-color: rgb(71, 71, 71);  
+  border: none;
+  color: white;
+
+  padding: 1rem 2rem;
+  border-radius: .5rem;
+
+  box-shadow: 0 0 3px 1px black;
+
+  font-size: 16px;
+  font-weight: bold;
+
+  cursor: pointer;
+  transition: .2s linear;
+}
+button:hover{
+  opacity: .8;
+  transition: .2s linear;
+}
+button:active{
+  transform: scale(.9);
+}
+
+.title{
+  color: white;
+  font-size: 2rem;
+  font-weight: bold;
+}
+.app{
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.display{
+  background-color: rgb(29, 29, 34);
+  border-radius: .6rem;
+  width: 100%;
+  height: 65px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  justify-content: center;
+  padding-right: .7rem;
+
+  overflow: hidden;
+}
+#table_display{
+  color: white;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.calculator{
+  display: flex;
+  gap: .4rem;
+}
+.generalGrid{
+  display: grid;
+  gap: .4rem;
+  grid-template-columns: repeat(3, 70px);
+}
+#table_opBasic{
+  grid-template-columns: repeat(1, 70px);
+}
+
+/* BTN */
+.btn_submit{
+  background-color: rgb(5, 184, 255);
+  font-weight: bold;
+}
+
+.clean{
+  background-color: red;
+  padding: .5rem;
+}
+
+/* Op Math */
+.op-aritmetic{
+  background-color: rgb(56, 52, 52);
+  padding: 1rem .5rem;
+}
+#table_opMath{
+  grid-template-columns: repeat(1, 70px);
+  height: 20px;
+}
+/* TODO: realizar cambios y borrar esta tarea */
+/* TODO: una vez realizado la logica*/
+#table_opMath button:nth-child(2),
+#table_opMath button:nth-child(3)
+{
+  display: none;
+}
+
+/* Template Config */
+#template_config{
+  display: none;
+}
+
