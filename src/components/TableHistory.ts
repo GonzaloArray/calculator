@@ -21,7 +21,7 @@ export const renderHistory = () => {
     
     const current = <HTMLParagraphElement>document.createElement('p')
     current.classList.add('current')
-    current.textContent = `current: ${currentDate}`
+    current.textContent = `Current: ${currentDate}`
 
     console.log(id)
     info.appendChild(current)
