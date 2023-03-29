@@ -1,5 +1,5 @@
 import { configValue } from "../../data/CombinationNumber"
-import { indexLastStatus } from "./indexLastStatus"
+
 
 interface Config {
   result: number,
