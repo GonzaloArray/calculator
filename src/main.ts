@@ -1,6 +1,7 @@
 import { renderOptions } from "./components/ConfigCalculator";
 import { renderClenButton } from "./components/ControlPanel";
 import { handleSubmit } from "./components/FormSubmit";
+import { renderHistory } from "./components/TableHistory";
 import { renderBtnNumeric } from "./components/TableNumeric";
 import { renderOpMath } from "./components/TableOpMath";
 import { renderSimbolBasic } from "./components/TableSimbol";
@@ -11,11 +12,14 @@ import { DATA_PANEL_CONTROL } from "./data/panel_control/DATA";
 
 const formulario = document.querySelector('#formulario');
 
-renderClenButton(DATA_PANEL_CONTROL)
-renderOpMath(OP_MATH)
-renderOptions(BTN_CONFIG)
-renderSimbolBasic(OPERATION_BUTTONS)
-renderBtnNumeric(BTN_NUMERIC_CONFIG)
+document.addEventListener('DOMContentLoaded', () =>{
+  renderHistory()
+  renderClenButton(DATA_PANEL_CONTROL)
+  renderOpMath(OP_MATH)
+  renderOptions(BTN_CONFIG)
+  renderSimbolBasic(OPERATION_BUTTONS)
+  renderBtnNumeric(BTN_NUMERIC_CONFIG)
+})
 
 
 formulario?.addEventListener('submit', handleSubmit)
