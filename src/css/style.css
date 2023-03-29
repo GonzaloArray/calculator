@@ -102,13 +102,7 @@ button:active{
   grid-template-columns: repeat(1, 70px);
   height: 20px;
 }
-/* TODO: realizar cambios y borrar esta tarea */
-/* TODO: una vez realizado la logica*/
-#table_opMath button:nth-child(2),
-#table_opMath button:nth-child(3)
-{
-  display: none;
-}
+
 
 /* Template Config */
 #template_config{
