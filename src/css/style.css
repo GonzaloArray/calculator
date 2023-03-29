@@ -10,6 +10,8 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+
+  height: 100vh;
 }
 /* Generales */
 p{
@@ -44,6 +46,14 @@ button:active{
   font-size: 2rem;
   font-weight: bold;
 }
+
+.section_grid{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+
 .app{
   display: flex;
   flex-direction: column;
@@ -103,9 +113,22 @@ button:active{
   height: 20px;
 }
 
-
 /* Template Config */
 #template_config{
   display: none;
 }
 
+/* Template history */
+.section_history{
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+}
+#table_history{
+  background-color: rgb(28, 27, 29);
+  height: 500px;
+  width: 250px;
+
+  border-radius: .5rem;
+  color: white;
+}
