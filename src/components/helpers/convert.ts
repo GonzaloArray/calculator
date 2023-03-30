@@ -1,21 +1,38 @@
 import { configValue } from "../../data/CombinationNumber"
-import { indexLastStatus } from "./indexLastStatus"
+
 
 interface Config {
   result: number,
   currentValue: string
 }
+interface Props {
+  start: number,
+  last: number,
+  option: string
+}
 
-export const getConvert = (start:number, last: number): Config => {
-  let result: number
-  let convert: number
+export const getConvert = ({
+  last,
+  start,
+  option
+}: Props): Config => {
+
+  let result: number = 0
+  let convert: number = 0
   
   const data = configValue.operation.slice(start, last + 1)
+  
   convert = parseInt(data, 10)
 
-  result = convert * convert
-
   const currentValue = configValue.operation.slice(0, start + 1)
+
+  if (option === 'elevado') {
+    result = convert * convert;
+  } else if (option === 'raiz') {
+    result = Math.sqrt(convert);
+  } else if (option === 'porcentaje') {
+    result = convert * 0.01;
+  }
 
   return {
     result,
@@ -23,28 +40,21 @@ export const getConvert = (start:number, last: number): Config => {
   }
 }
 
+export const handleConvert = ({start, last, option}: Props): void => {
 
-export const handleConvert = (option: string): void => {
-  const lastOpeartor = indexLastStatus()
-  const lastIndex = configValue.operation.length - 1
+  const startvalue:number = start === -1 ? 0 : start
 
-  let result:Config
+  if (start < 0 && last < 0) return
 
-  if (
-    option === 'elevado' &&
-    lastOpeartor === -1 &&
-    lastIndex >= 0
-  ) {
-    
-    result = getConvert(0, lastIndex)    
-    configValue.operation = `${result.result}`
-    console.log(configValue.operation)
+  const data = getConvert({
+    start: startvalue,
+    last,
+    option
+  })
+  
+  const result = startvalue === 0 
+  ? `${data.result}`
+  : `${data.currentValue}${data.result}`
 
-  } else if (
-    option === 'elevado' && lastOpeartor >= 1 && lastIndex >= 0) {
-
-    result = getConvert(lastOpeartor, lastIndex)
-    configValue.operation = `${result.currentValue}${result.result}`
-    console.log(configValue.operation)
-  }
+  configValue.operation = result
 }

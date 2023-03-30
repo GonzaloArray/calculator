@@ -7,49 +7,58 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Calculadora + TS</title>
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="./src/css/style.css">
 </head>
 
 <body>
-  <section id="template_config">
-    
-  </section>
-  <div class="app">
-    <h1 class="title">Calculadora</h1>
-
-
-    <!-- Display -->
-    <section class="display">
-      <p id="table_result">
-        0
-      </p>
-      <h2 id="table_display">
-        0
-      </h2>
-    </section>
-
-    <section id="control_panel" class="generalGrid">
+  <div class="section_grid">
+    <section id="template_config">
       
     </section>
-
-    <!-- Botones -->
-    <div class="calculator">
-      <section id="table_opMath" class="generalGrid">
+    <div class="app">
+      <!-- Display -->
+      <section class="display">
+        <p id="table_result">
+          0
+        </p>
+        <h2 id="table_display">
+          0
+        </h2>
+      </section>
+  
+      <section id="control_panel" class="generalGrid">
         
       </section>
-      <section id="table_numeric" class="generalGrid">
-
-      </section>
-      <section id="table_opBasic" class="generalGrid">
-
-      </section>
-
+  
+      <!-- Botones -->
+      <div class="calculator">
+        <section id="table_opMath" class="generalGrid">
+          
+        </section>
+        <section id="table_numeric" class="generalGrid">
+  
+        </section>
+        <section id="table_opBasic" class="generalGrid">
+  
+        </section>
+  
+      </div>
+      <form id="formulario">
+        <button class="btn_submit" type="submit">
+          =
+        </button>
+      </form>
     </div>
-    <form id="formulario">
-      <button class="btn_submit" type="submit">
-        =
-      </button>
-    </form>
+    <section class="section_history">
+      <h2 class="title">Historial</h2>
+      <div id="table_history">
+
+      </div>
+    </section>
   </div>
   <script type="module" src="/src/main.ts"></script>
 </body>
