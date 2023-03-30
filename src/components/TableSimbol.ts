@@ -1,5 +1,6 @@
 import { OPERATION_BUTTONS } from "../data/BTN_CALCULATOR"
 import { configValue } from "../data/CombinationNumber"
+import { hasDoubleOperator } from "./helpers/getDobleOperator"
 
 const TABLE_OPBASIC = document.querySelector('#table_opBasic') as HTMLElement
 
@@ -8,10 +9,26 @@ interface Props {
 }
 
 const handleClick = (btn: string) => {
-  configValue.operation += btn
-  configValue.stop = true
-  console.log(configValue)
+  
+  if (configValue.operation === '' && btn !== '-') return
+  
+  if (
+    configValue.operation === '' ||
+    configValue.operation[0] !== '-' && btn === '-' ||
+    configValue.operation.length > 1
+  ) {
+    configValue.operation += btn
+  }
+
+  if (['+', '/', '*'].includes(btn) && 
+      configValue.operation.length >= 1
+    ) {
+    configValue.operation += btn
+  }
+
+  configValue.stop = hasDoubleOperator(btn)
   renderSimbolBasic(OPERATION_BUTTONS)
+
 }
 
 export const renderSimbolBasic = (btnOperation: Props): void => {

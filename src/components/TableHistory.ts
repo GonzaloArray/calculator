@@ -8,6 +8,14 @@ export const renderHistory = () => {
   if (TABLE_HISTORY) {
     TABLE_HISTORY.textContent = '';
   }
+  
+  if(HISTORY.length === 0  ){
+    const data = document.createElement('h2');
+    data.classList.add('history');
+    data.textContent = 'History empty'
+
+    TABLE_HISTORY?.appendChild(data)
+  }
 
   // TODO: Realizar el delete del historial
   HISTORY.forEach(({id, operation, currentDate}:HistotyProps ): void => {
@@ -23,9 +31,9 @@ export const renderHistory = () => {
     current.classList.add('current')
     current.textContent = `Current: ${currentDate}`
 
-    console.log(id)
     info.appendChild(current)
     info.appendChild(history)
     TABLE_HISTORY?.appendChild(info)
+    console.log(id)
   })
 }
