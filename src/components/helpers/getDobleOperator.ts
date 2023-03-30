@@ -1,12 +1,13 @@
+
 let lastChar: string = '';
 
-export const hasDoubleOperator = (s: string): boolean =>{
+export const hasDoubleOperator = (s: string, len:number): boolean =>{
 
   if (['+', '/', '*'].includes(s)) {
     return true
   }
 
-  if (s === '-') {
+  if (length > 1 && s === '-') {
     lastChar += s;
   }
   

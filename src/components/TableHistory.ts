@@ -34,6 +34,5 @@ export const renderHistory = () => {
     info.appendChild(current)
     info.appendChild(history)
     TABLE_HISTORY?.appendChild(info)
-    console.log(id)
   })
 }

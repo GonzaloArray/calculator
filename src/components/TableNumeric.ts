@@ -18,12 +18,9 @@ const handleClick = (number: number): object => {
     configValue.operation += number
     configValue.started = true
     configValue.stop = false
-    console.log(configValue.operation)
   } else {
     configValue.operation += number
     configValue.stop = false
-    console.log(configValue.operation)
-
   }
 
   renderSimbolBasic(OPERATION_BUTTONS)

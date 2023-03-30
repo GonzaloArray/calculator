@@ -15,7 +15,7 @@ const handleClick = (btn: string) => {
   if (
     configValue.operation === '' ||
     configValue.operation[0] !== '-' && btn === '-' ||
-    configValue.operation.length > 1
+    configValue.operation.length > 1 && btn === '-'
   ) {
     configValue.operation += btn
   }
@@ -26,7 +26,7 @@ const handleClick = (btn: string) => {
     configValue.operation += btn
   }
 
-  configValue.stop = hasDoubleOperator(btn)
+  configValue.stop = hasDoubleOperator(btn, configValue.operation.length)
   renderSimbolBasic(OPERATION_BUTTONS)
 
 }
