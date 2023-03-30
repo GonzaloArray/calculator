@@ -7,7 +7,7 @@ export const hasDoubleOperator = (s: string, len:number): boolean =>{
     return true
   }
 
-  if (length > 1 && s === '-') {
+  if (len > 1 && s === '-') {
     lastChar += s;
   }
   
