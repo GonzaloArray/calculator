@@ -19,13 +19,38 @@ export const operationMultiple = (numeros: number[], operadores: string[]): numb
   }, numeros[0]);
 };
 
+function parseEquation(equation: string): { valor: string[], operadores: string[] } {
+  let currentNumber: string = '';
+
+  const result = equation.split('').reduce((acc: { valor: string[], operadores: string[] }, char: string, i: number) => {
+
+    if (char === '-' && i !== 0 && equation.charAt(i - 1) === '-') {
+      currentNumber += char;
+    } else if (!isNaN(Number(equation.charAt(i)))  || i === 0 && char === '-') {
+      currentNumber += char;
+    }
+
+    if ((char === '+' || char === '-' || char === '*' || char === '/') && i >= 1 && equation.charAt(i - 1) !== '-') {
+      acc.valor.push(currentNumber);
+      acc.operadores.push(char);
+      currentNumber = '';
+    }
+
+    if (i === equation.length - 1) {
+      acc.valor.push(currentNumber);
+    }
+
+    return acc;
+  }, { valor: [], operadores: [] })
+
+  return result
+}
+
+
 export const resolveOperations = (operacion: string): number => {
-  const patron = /([-+*/])/;
-
-  const valores: string[] = operacion.split(patron);
-  const operadores: string[] = valores.filter((valor) => ['+', '-', '*', '/'].includes(valor));
-  const numeros = valores.map((valor) => parseInt(valor, 10)).filter((valor) => !isNaN(valor));
-
+  const { valor, operadores} = parseEquation(operacion)
+  const numeros = valor.map((valor) => parseInt(valor, 10)).filter((valor) => !isNaN(valor));
+  
   const multiplicacionDivision = operationMultiple(numeros, operadores);
 
   const sumaResta = numeros.reduce((acc, valor, index) => {
@@ -39,6 +64,5 @@ export const resolveOperations = (operacion: string): number => {
     }
   }, multiplicacionDivision);
 
-
-  return sumaResta;
+  return sumaResta
 };

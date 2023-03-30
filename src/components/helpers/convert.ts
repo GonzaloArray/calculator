@@ -51,7 +51,7 @@ export const handleConvert = ({start, last, option}: Props): void => {
     last,
     option
   })
-  console.log(data, start)
+  
   const result = startvalue === 0 
   ? `${data.result}`
   : `${data.currentValue}${data.result}`
