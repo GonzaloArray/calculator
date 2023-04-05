@@ -7,12 +7,7 @@
 
 body {
   background-color: #757575;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  height: 100vh;
+  padding: 1rem;
 }
 /* Generales */
 p{
@@ -23,7 +18,7 @@ button {
   border: none;
   color: white;
 
-  padding: 1rem 2rem;
+  padding: 1rem 0rem;
   border-radius: .5rem;
 
   box-shadow: 0 0 3px 1px black;
@@ -42,6 +37,18 @@ button:active{
   transform: scale(.9);
 }
 
+@media (min-width: 768px) {
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+    height: 100vh;
+  } 
+  bottom{
+    padding: 1rem 2rem;
+  }
+}
 .title{
   color: white;
   font-size: 2rem;
@@ -49,10 +56,19 @@ button:active{
 }
 
 .section_grid{
+  padding-top: 4rem;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .section_grid{
+    flex-direction: row;
+    padding-top: 0;
+  }
 }
 
 .app{
@@ -87,16 +103,24 @@ button:active{
 .generalGrid{
   display: grid;
   gap: .4rem;
-  grid-template-columns: repeat(3, 70px);
+  grid-template-columns: repeat(3, 60px);
 }
 #table_opBasic{
-  grid-template-columns: repeat(1, 70px);
+  grid-template-columns: repeat(1, 60px);
 }
-
 /* BTN */
 .btn_submit{
   background-color: rgb(5, 184, 255);
   font-weight: bold;
+  padding: 1rem 2rem;
+}
+@media (min-width: 768px) {
+  .generalGrid{
+    grid-template-columns: repeat(3, 70px);
+  }
+  #table_opBasic{
+    grid-template-columns: repeat(1, 70px);
+  } 
 }
 
 .clean{
@@ -116,7 +140,13 @@ button:active{
 
 /* Template Config */
 #template_config{
-  display: none;
+  position: absolute;
+  top: 1rem;
+  left: 10%;
+
+  display: flex;
+  flex-direction: column;
+  gap: .8rem;
 }
 
 /* Template history */
@@ -185,4 +215,15 @@ button:active{
 .history{
   font-weight: 200;
   font-size: 1rem;
+}
+
+.selector{
+  padding: .5rem 2rem;
+  border-radius: .5rem;
+  background-color: #0f7e868e;
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: .3rem;
+  outline: none;
 }
