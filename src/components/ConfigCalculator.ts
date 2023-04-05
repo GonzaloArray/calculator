@@ -1,10 +1,17 @@
 import { configStatus } from "../types/config"
+import { cleanCientific, renderPanelCientific } from "./TableCientific"
 
 const SECTION_OPTION = <HTMLDivElement>document.querySelector('#template_config')
 
 // TODO: realizar la logica de pasar de cientifica a standar y viceversa
-const handleClick = (id: string) => {
-  console.log(id)
+// TODO: realizar una consulta al chatgpt sobre como implemntar mejor el parametro string para que sea más estricto el resultado
+
+const handleChange = (option: string) => {
+  if (option === 'cientific') {
+    renderPanelCientific()
+  }else if (option === 'standard') {
+    cleanCientific()
+  }
 }
 
 export const renderOptions = (config: configStatus[]) => {
@@ -12,14 +19,14 @@ export const renderOptions = (config: configStatus[]) => {
   selector.classList.add('selector')
   selector.addEventListener('change', (e: Event) => {
     const target = e.target as HTMLInputElement | HTMLSelectElement;
-    handleClick(target.value);
+    handleChange(target.value);
   });
   
   config.forEach(status => {
     
     const option = document.createElement('option')
     option.textContent = status.option
-    option.value = status.id
+    option.value = status.option
 
     selector.appendChild(option)
     SECTION_OPTION.appendChild(selector)

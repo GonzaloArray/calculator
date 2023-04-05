@@ -1,8 +1,5 @@
-import { configStatus } from "../types/config"
+import { ConfigExtend } from "../types/config";
 
-export interface ConfigExtend extends configStatus {
-  value: string
-}
 
 export const OP_MATH: ConfigExtend[] = [
   {
