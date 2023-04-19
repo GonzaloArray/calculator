@@ -3,6 +3,7 @@ import { configValue } from "../data/CombinationNumber";
 import { resultReaload } from "./ResultReload";
 import { renderTableResult } from "./TableResult";
 import { renderSimbolBasic } from "./TableSimbol";
+import { formatNumber } from "./helpers/formatNumber";
 
 const TABLE_NUMERIC = document.querySelector('#table_numeric') as HTMLElement;
 
@@ -15,11 +16,19 @@ const handleClick = (number: number): object => {
 
 
   if (!configValue.started) {
-    configValue.operation += number
+    configValue.operation += number;
+
+    configValue.result = configValue.operation;
+
+
     configValue.started = true
     configValue.stop = false
   } else {
-    configValue.operation += number
+    configValue.operation += number;
+
+    let num = parseInt(configValue.operation);
+    configValue.result = formatNumber(num)
+
     configValue.stop = false
   }
 
