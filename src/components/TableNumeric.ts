@@ -9,7 +9,7 @@ const TABLE_NUMERIC = document.querySelector('#table_numeric') as HTMLElement;
 
 
 const handleClick = (number: number): object => {
-
+  
   if (configValue.operation.length === 0) {
     resultReaload()
   }
@@ -17,20 +17,15 @@ const handleClick = (number: number): object => {
 
   if (!configValue.started) {
     configValue.operation += number;
-
-    configValue.result = configValue.operation;
-
-
     configValue.started = true
     configValue.stop = false
   } else {
     configValue.operation += number;
 
-    let num = parseInt(configValue.operation);
-    configValue.result = formatNumber(num)
-
     configValue.stop = false
   }
+
+  configValue.result = formatNumber(configValue.operation)
 
   renderSimbolBasic(OPERATION_BUTTONS)
   renderTableResult()
