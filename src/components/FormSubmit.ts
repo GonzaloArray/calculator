@@ -1,6 +1,7 @@
 import { configValue } from "../data/CombinationNumber";
 import { addHistory } from "../data/HistotyResult";
 import { resolveOperations } from "../helpers/operations";
+import { formatNumber } from "./helpers/formatNumber";
 import { getDate } from "./helpers/getDate";
 import { Alert } from "./MsgAlert";
 import { renderHistory } from "./TableHistory";
@@ -37,7 +38,7 @@ export const handleSubmit = (e: Event): void => {
 
   renderHistory()
 
-  DISPLAY.innerText = `${valor}`
+  DISPLAY.innerText = `${formatNumber(String(valor))}`
 
   configValue.operation = ''
 }

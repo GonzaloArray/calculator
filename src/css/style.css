@@ -137,6 +137,9 @@ button:active{
   grid-template-columns: repeat(1, 70px);
   height: 20px;
 }
+#table_cientific{
+  grid-template-columns: repeat(6, 70px);
+}
 
 /* Template Config */
 #template_config{
