@@ -22,6 +22,7 @@ const handleClean = (status: string) => {
   
   if (status === 'clean') {
     configValue.operation = ''    
+    configValue.result = ''    
     configValue.started = false
     DISPLAY.textContent = '0'  
   }

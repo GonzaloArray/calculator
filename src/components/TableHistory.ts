@@ -1,5 +1,6 @@
 import { HISTORY } from "../data/HistotyResult"
 import { HistotyProps } from "../types/interface";
+import { formatNumber } from "./helpers/formatNumber";
 
 const TABLE_HISTORY = document.querySelector('#table_history')
 
@@ -25,7 +26,10 @@ export const renderHistory = () => {
 
     const history = <HTMLHeadingElement>document.createElement('h2')
     history.classList.add('history')
-    history.textContent = operation
+
+    // TODO: Arreglar esto, mejorar la logica de los botones
+    const result = operation.split('=')[0] + ' = ' + formatNumber(operation.split('=')[1]) 
+    history.textContent = result
     
     const current = <HTMLParagraphElement>document.createElement('p')
     current.classList.add('current')

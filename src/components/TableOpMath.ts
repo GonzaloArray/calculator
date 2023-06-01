@@ -1,10 +1,10 @@
-import { ConfigExtend } from "../data/BTN_OP_MATH"
 import { configValue } from "../data/CombinationNumber"
+import { ConfigExtend } from "../types/config"
 import { handleConvert } from "./helpers/convert"
 import { indexLastStatus } from "./helpers/indexLastStatus"
 import { renderTableResult } from "./TableResult"
 
-const TABLE_OP_MATH = document.querySelector('#table_opMath')
+const TABLE_OP_MATH = document.querySelector('#table_opMath') as HTMLElement
 
 const handleClick = (option: string): void => {
   
@@ -23,6 +23,11 @@ const handleClick = (option: string): void => {
 }
 
 export const renderOpMath = (opMath: ConfigExtend[]) => {
+
+  if (TABLE_OP_MATH) {
+    TABLE_OP_MATH.textContent = '';
+  }
+
   opMath.forEach(op => {
     const { option } = op
     const button = <HTMLButtonElement>document.createElement('button')
