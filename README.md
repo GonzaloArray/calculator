@@ -62,8 +62,8 @@ _Agrega notas adicionales sobre como hacer deploy_
 
 _Menciona las herramientas que utilizaste para crear tu proyecto_
 
-* [Typescript](http://www.dropwizard.io/1.0.2/docs/) - El framework web usado
-* [Sass](https://maven.apache.org/) - Manejador de dependencias
+* [Typescript](http://www.dropwizard.io/1.0.2/docs/) - Supercell
+* [Sass](https://maven.apache.org/) - Style components
 
 ## Contribuyendo 🖇️
 
