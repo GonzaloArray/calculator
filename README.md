@@ -81,7 +81,7 @@ Usamos [SemVer](http://semver.org/) para el versionado. Para todas las versiones
 
 _Menciona a todos aquellos que ayudaron a levantar el proyecto desde sus inicios_
 
-* **Javier Gonzalo Arrayaran** - *Trabajo Inicial* - [villanuevand](https://github.com/GonzaloArray)
+* **Javier Gonzalo Arrayaran** - *Trabajo Inicial* - [Gonzalo Arrayaran](https://github.com/GonzaloArray)
 
 También puedes mirar la lista de todos los [contribuyentes](https://github.com/your/project/contributors) quíenes han participado en este proyecto. 
 
